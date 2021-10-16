@@ -61,10 +61,10 @@ public class Calculator {
         } else if (list.size() == 1) {
             return Collections.singletonList(list.get(0));
         }
+        
         List<T> newList = new ArrayList<>();
         newList.add(list.get(0));
         newList.add(list.get(list.size() - 1));
-
         return newList;
     }
 }

@@ -35,7 +35,7 @@ public class Calculator {
     public <T> List<T> getOddElements(List<T> list) {
         if (list.size() == 0) {
             return Collections.emptyList();
-        } else if (list.size() <= 1) {
+        } else if (list.size() == 1) {
             return Collections.singletonList(list.get(0));
         }
         List<T> newList = new ArrayList<>();

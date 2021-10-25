@@ -43,10 +43,8 @@ public class Calculator {
         }
 
         List<T> resList = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            if (i % 2 == 0) {
-                resList.add(list.get(i));
-            }
+        for (int i = 0; i < list.size(); i += 2) {
+            resList.add(list.get(i));
         }
         return resList;
     }

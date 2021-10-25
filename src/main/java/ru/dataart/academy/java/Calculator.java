@@ -36,12 +36,10 @@ public class Calculator {
      */
     public <T> List<T> getOddElements(List<T> list) {
         if (list == null) {
-            throw new NullPointerException("where is list?");
+            throw new NullPointerException("Where is list?");
         }
         if (list.size() == 0) {
             return Collections.emptyList();
-        } else if (list.size() == 1) {
-            return Collections.singletonList(list.get(0));
         }
 
         List<T> resList = new ArrayList<>();
@@ -66,13 +64,15 @@ public class Calculator {
         }
         if (list.size() == 0) {
             return Collections.emptyList();
-        } else if (list.size() == 1) {
-            return Collections.singletonList(list.get(0));
         }
 
         List<T> resList = new ArrayList<>();
         resList.add(list.get(0));
+        if (list.size() == 1) {
+            return resList;
+        }
         resList.add(list.get(list.size() - 1));
         return resList;
     }
 }
+

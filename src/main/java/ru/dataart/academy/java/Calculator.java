@@ -15,6 +15,9 @@ public class Calculator {
     }
 
     private Integer getNumber(List<Integer> number) {
+        if (number == null) {
+            throw new NullPointerException("where is list?");
+        }
         long res = number.get(0);
         for (int i = 1; i < number.size(); i++) {
             res += number.get(i) * (long) Math.pow(10, i);
@@ -22,48 +25,54 @@ public class Calculator {
         if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) {
             throw new IllegalArgumentException("The number cannot be converted");
         }
-        return  (int) res;
+        return (int) res;
     }
 
     /**
-     *
      * @param list - list of elements
-     * @param <T> - type of element
+     * @param <T>  - type of element
      * @return - odd list elements
      * Example: [1, 22, 34] -> [1, 34]
      */
     public <T> List<T> getOddElements(List<T> list) {
+        if (list == null) {
+            throw new NullPointerException("where is list?");
+        }
         if (list.size() == 0) {
             return Collections.emptyList();
         } else if (list.size() == 1) {
             return Collections.singletonList(list.get(0));
         }
-        List<T> newList = new ArrayList<>();
+
+        List<T> resList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (i % 2 == 0) {
-                newList.add(list.get(i));
+                resList.add(list.get(i));
             }
         }
-        return newList;
+        return resList;
     }
 
     /**
-     *
      * @param list - list of elements
-     * @param <T> - type of element
+     * @param <T>  - type of element
      * @return - first and last elements of the list
      * Example: [1, 2, 3] -> [1, 3]
      * [1, 2, 3 , 4] -> [1, 4]
      */
     public <T> List<T> getBounds(List<T> list) {
+        if (list == null) {
+            throw new NullPointerException("where is list?");
+        }
         if (list.size() == 0) {
             return Collections.emptyList();
         } else if (list.size() == 1) {
             return Collections.singletonList(list.get(0));
-        }        
-        List<T> newList = new ArrayList<>();
-        newList.add(list.get(0));
-        newList.add(list.get(list.size() - 1));
-        return newList;
+        }
+
+        List<T> resList = new ArrayList<>();
+        resList.add(list.get(0));
+        resList.add(list.get(list.size() - 1));
+        return resList;
     }
 }

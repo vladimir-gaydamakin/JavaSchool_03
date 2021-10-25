@@ -63,8 +63,11 @@ public class Calculator {
     public <T> List<T> getBounds(List<T> list) {
         if (list == null) {
             throw new NullPointerException("where is list?");
-        } else if (list.size() == 0) {
+        }
+        if (list.size() == 0) {
             return Collections.emptyList();
+        } else if (list.size() == 1) {
+            return Collections.singletonList(list.get(0));
         }
 
         List<T> resList = new ArrayList<>();

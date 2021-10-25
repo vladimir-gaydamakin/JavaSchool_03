@@ -16,7 +16,7 @@ public class Calculator {
 
     private Integer getNumber(List<Integer> number) {
         if (number == null) {
-            throw new NullPointerException("where is list?");
+            throw new NullPointerException("Where is list?");
         }
         long res = number.get(0);
         for (int i = 1; i < number.size(); i++) {
@@ -60,7 +60,7 @@ public class Calculator {
      */
     public <T> List<T> getBounds(List<T> list) {
         if (list == null) {
-            throw new NullPointerException("where is list?");
+            throw new NullPointerException("Where is list?");
         }
         if (list.size() == 0) {
             return Collections.emptyList();
